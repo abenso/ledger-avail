@@ -383,7 +383,7 @@ parser_error_t _readAdjustmentDirection(parser_context_t* c, pd_AdjustmentDirect
 {
     CHECK_INPUT()
     CHECK_ERROR(_readUInt8(c, &v->value))
-    if (v->value < 0 || v->value > 1) {
+    if (v->value > 1) {
         return parser_unexpected_value;
     }
     return parser_ok;
