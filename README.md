@@ -28,7 +28,7 @@ Please:
 - **Do not use in production**
 - **Do not use a Ledger device with funds for development purposes.**
 - **Have a separate and marked device that is used ONLY for development and testing**
-# Avail 1.28.x
+# Avail 1.30.x
 
 ## System
 
@@ -318,6 +318,7 @@ Please:
 | Set step verification key   |        |           |                  |         | `OptionBoundedVecu8ConstU3210_000`value<br/>                                                                             |
 | Set rotate verification key |        |           |                  |         | `OptionBoundedVecu8ConstU3210_000`value<br/>                                                                             |
 | Failed send message txs     |        |           |                  |         | `VecCompactu32`failed_txs<br/>                                                                                           |
+| Set updater                 |        |           |                  |         | `H256`updater<br/>                                                                                                       |
 
 ## Proxy
 

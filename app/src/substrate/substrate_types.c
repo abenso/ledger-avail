@@ -384,7 +384,7 @@ parser_error_t _readAdjustmentDirection(parser_context_t* c, pd_AdjustmentDirect
     CHECK_INPUT()
     CHECK_ERROR(_readUInt8(c, &v->value))
     if (v->value > 1) {
-        return parser_unexpected_value;
+        return parser_value_out_of_range;
     }
     return parser_ok;
 }
@@ -452,7 +452,9 @@ parser_error_t _readPage(parser_context_t* c, pd_Page_t* v)
 
 parser_error_t _readPoolId(parser_context_t* c, pd_PoolId_t* v)
 {
-    return _readUInt32(c, &v->value);
+    CHECK_INPUT()
+    CHECK_ERROR(_readUInt32(c, &v->value))
+    return parser_ok;
 }
 
 parser_error_t _readPoolState(parser_context_t* c, pd_PoolState_t* v)
@@ -1291,7 +1293,6 @@ parser_error_t _toStringAdjustmentDirection(
 {
     CLEAN_AND_CHECK()
     UNUSED(pageIdx);
-
     *pageCount = 1;
     switch (v->value) {
     case 0:
